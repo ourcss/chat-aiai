@@ -167,7 +167,8 @@ const cn = {
   },
   Store: {
     DefaultTopic: "新的聊天",
-    BotHello: "有什么可以帮你的吗",
+    BotHello:
+      "有什么可以帮你的吗？\n 本站支持最新的4.0api，\n 购买请联系微信csscode",
     Error: "出错了，稍后重试吧",
     Prompt: {
       History: (content: string) =>

@@ -96,9 +96,9 @@ export function SideBar(props: { className?: string }) {
       }`}
     >
       <div className={styles["sidebar-header"]}>
-        <div className={styles["sidebar-title"]}>ChatGPT Next</div>
+        <div className={styles["sidebar-title"]}>ChatGPT中文网</div>
         <div className={styles["sidebar-sub-title"]}>
-          Build your own AI assistant.
+          AI 智能问答，仅供个人学习交流使用
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
@@ -151,9 +151,9 @@ export function SideBar(props: { className?: string }) {
             </Link>
           </div>
           <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL} target="_blank">
+            {/* <a href={REPO_URL} target="_blank">
               <IconButton icon={<GithubIcon />} shadow />
-            </a>
+            </a> */}
           </div>
         </div>
         <div>
