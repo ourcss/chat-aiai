@@ -96,7 +96,7 @@ export function SideBar(props: { className?: string }) {
       }`}
     >
       <div className={styles["sidebar-header"]}>
-        <div className={styles["sidebar-title"]}>ChatGPT中文网</div>
+        <div className={styles["sidebar-title"]}>搜狗AI</div>
         <div className={styles["sidebar-sub-title"]}>
           AI 智能问答，仅供个人学习交流使用
         </div>
@@ -117,7 +117,7 @@ export function SideBar(props: { className?: string }) {
           icon={<PluginIcon />}
           text={shouldNarrow ? undefined : Locale.Plugin.Name}
           className={styles["sidebar-bar-button"]}
-          onClick={() => showToast(Locale.WIP)}
+          onClick={() => (window.location.href = "http://www.baidu.com")}
           shadow
         />
       </div>
@@ -151,9 +151,9 @@ export function SideBar(props: { className?: string }) {
             </Link>
           </div>
           <div className={styles["sidebar-action"]}>
-            {/* <a href={REPO_URL} target="_blank">
+            <a href={REPO_URL} target="_blank">
               <IconButton icon={<GithubIcon />} shadow />
-            </a> */}
+            </a>
           </div>
         </div>
         <div>

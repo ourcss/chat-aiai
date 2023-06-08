@@ -7,10 +7,10 @@ import { getBuildConfig } from "./config/build";
 const buildConfig = getBuildConfig();
 
 export const metadata = {
-  title: "人工智能问答-ChatGPT中文网",
-  description: "人工智能问答-ChatGPT中文网",
+  title: "搜狗AI-ChatGPT中文网",
+  description: "搜狗AI人工智能问答-ChatGPT中文网",
   appleWebApp: {
-    title: "ChatGPT AI问答",
+    title: "搜狗AI AI问答 ",
     statusBarStyle: "default",
   },
   themeColor: "#fafafa",
@@ -41,6 +41,7 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700;900&display=swap"
           rel="stylesheet"
         ></link>
+
         <script src="/serviceWorkerRegister.js" defer></script>
       </head>
       <body>{children}</body>

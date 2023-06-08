@@ -2,6 +2,386 @@ import { BuiltinMask } from "./typing";
 
 export const CN_MASKS: BuiltinMask[] = [
   {
+    avatar: "1f4c8",
+    name: "全网免费资源爬取",
+    context: [
+      {
+        role: "system",
+        content: "我可以为您爬取全网您需要的资源\n发送你需要资源即可\n",
+        date: "",
+      },
+      {
+        role: "assistant",
+        content: "请帮我查找【你查找的资源】\n例如:请帮我查找VIP音乐解析网站\n",
+        date: "",
+      },
+    ],
+    modelConfig: {
+      model: "gpt-3.5-turbo",
+      temperature: 0.5,
+      max_tokens: 3500,
+      presence_penalty: 0,
+      sendMemory: true,
+      historyMessageCount: 4,
+      compressMessageLengthThreshold: 1000,
+    },
+    lang: "cn",
+    builtin: true,
+  },
+  // {
+  // 	"avatar": "1f3ac",
+  // 	"name": "VIP影视快捷爬取",
+  // 	"context": [
+  // 		{
+  // 			"role": "system",
+  // 			"content": "我可以为您爬取全网VIP超清影视供您免费观看\n发送你想看的电影电视剧即可\n注意：联网功能开启每提问一次为一次新的对话，不支持上下文对话，请在不使用的时候关闭联网功能",
+  // 			"date": ""
+  // 		},
+  // 		{
+  // 			"role": "assistant",
+  // 			"content": "请帮我查找【你想看的影片】的免费观影地址\n例1:请帮我查找流浪地球2的免费观影地址\n\n例2:请帮我查找流浪地球的无广告免费观影地址\n\n注意❗：使用此功能前请点击下方WiFi图标开启联网,不开启无法爬取,转为蓝色既联网开启",
+  // 			"date": ""
+  // 		}
+  // 	],
+  // 	"modelConfig": {
+  // 		"model": "gpt-3.5-turbo",
+  // 		"temperature": 0.5,
+  // 		"max_tokens": 3500,
+  // 		"presence_penalty": 0,
+  // 		"sendMemory": true,
+  // 		"historyMessageCount": 4,
+  // 		"compressMessageLengthThreshold": 1000
+  // 	},
+  // 	"lang": "cn",
+  // 	"builtin": true,
+  // 	"id": 100001
+  // },
+  // {
+  // 	"avatar": "1f4e9",
+  // 	"name": "论文速写",
+  // 	"context": [
+  // 		{
+  // 			"role": "system",
+  // 			"content": "你好，我可以帮你写一篇论文，但是你需要告诉我一些信息，比如论文的主题、类型、长度、格式、语言等。\n你可以用这样的方式提问我：请帮我写一篇关于中国古代诗歌的论文，要求是中文，2000字，MLA格式，分析诗歌的主题和风格。请先给我一个大纲，包括引言、正文和结论的主要内容和论点。\n这样我就会先生成一个大纲，然后再根据大纲写出论文的正文。你也可以在看到大纲后给我反馈，让我修改或改进。",
+  // 			"date": ""
+  // 		}
+  // 	],
+  // 	"modelConfig": {
+  // 		"model": "gpt-3.5-turbo",
+  // 		"temperature": 0.5,
+  // 		"max_tokens": 3500,
+  // 		"presence_penalty": 0,
+  // 		"sendMemory": true,
+  // 		"historyMessageCount": 4,
+  // 		"compressMessageLengthThreshold": 1000
+  // 	},
+  // 	"lang": "cn",
+  // 	"builtin": true,
+  // 	"id": 100002
+  // },
+  // {
+  // 	"avatar": "1f4c2",
+  // 	"name": "论文快速降重",
+  // 	"context": [
+  // 		{
+  // 			"role": "system",
+  // 			"content": "我会将您发送的文章句子结构打乱，同义词进行替换，句子改变语序已达到降重的目的\n请在文章后备注是否需要扩充、删减、学术化内容操作。\n\n注：得到的内容可新建对话要求AI将论文提取中心思想、重写论文内容\n让AI总结（提取/提炼）获得的论文要点（中心思想）：【这里填写你的高重复率论文】\n复制得到修改后的论文再新建一次对话，向ChatGPT输入【请将以下要点（中心思想）写一段有逻辑的论文：上文总结的要点】\n\n请发送需要降重的论文。",
+  // 			"date": ""
+  // 		}
+  // 	],
+  // 	"modelConfig": {
+  // 		"model": "gpt-3.5-turbo",
+  // 		"temperature": 0.5,
+  // 		"max_tokens": 3500,
+  // 		"presence_penalty": 0,
+  // 		"sendMemory": true,
+  // 		"historyMessageCount": 4,
+  // 		"compressMessageLengthThreshold": 1000
+  // 	},
+  // 	"lang": "cn",
+  // 	"builtin": true,
+  // 	"id": 100003
+  // },
+  // {
+  // 	"avatar": "1f4ea",
+  // 	"name": "PPT模板生成",
+  // 	"context": [
+  // 		{
+  // 			"role": "system",
+  // 			"content": "我现在是一名PPT制作专家，生成的内容大纲子节点内容以markdown形式发送给您。请提供PPT的主题，需要多少个大节点，每个大节点需要多少个子节点。每个子节点需要多少字的内容，请您发送以上需要的信息",
+  // 			"date": ""
+  // 		},
+  // 		{
+  // 			"role": "assistant",
+  // 			"content": "生成出来的文字模板可查看视频教程生成PPT文件[点击查看教程](http://47.115.219.124:8080/directlink/Ali/PPT%E7%94%9F%E6%88%90.mp4)",
+  // 			"date": ""
+  // 		}
+  // 	],
+  // 	"modelConfig": {
+  // 		"model": "gpt-3.5-turbo",
+  // 		"temperature": 0.5,
+  // 		"max_tokens": 3500,
+  // 		"presence_penalty": 0,
+  // 		"sendMemory": true,
+  // 		"historyMessageCount": 4,
+  // 		"compressMessageLengthThreshold": 1000
+  // 	},
+  // 	"lang": "cn",
+  // 	"builtin": true,
+  // 	"id": 100004
+  // },
+  // {
+  // 	"avatar": "1f4e6",
+  // 	"name": "思维导图生成",
+  // 	"context": [
+  // 		{
+  // 			"role": "system",
+  // 			"content": "你好，我可以为您生成思维导图的大纲，生成的内容以markdown形式发送给您。\n例如：我需要一个关于太阳系的思维导图大纲，需要3个主题，每个主题3个子主题。\n\n请发送您需要的思维导图主题以及具体的主题数量和子主题数量",
+  // 			"date": ""
+  // 		},
+  // 		{
+  // 			"role": "assistant",
+  // 			"content": "1.教程中涉及到的思维导图软件为官方版本：[立即下载](https://xmind.cn/)\n2.将生成好的大纲复制，新建一个文档，复制进行保存，最后将文件后缀改为md格式，后续跟着教程即可\n\n生成出来的文字模板可查看视频教程生成思维导图文件:[点击查看教程](http://47.115.219.124:8080/directlink/Ali/swdt.mp4)",
+  // 			"date": ""
+  // 		}
+  // 	],
+  // 	"modelConfig": {
+  // 		"model": "gpt-3.5-turbo",
+  // 		"temperature": 0.5,
+  // 		"max_tokens": 3500,
+  // 		"presence_penalty": 0,
+  // 		"sendMemory": true,
+  // 		"historyMessageCount": 4,
+  // 		"compressMessageLengthThreshold": 1000
+  // 	},
+  // 	"lang": "cn",
+  // 	"builtin": true,
+  // 	"id": 100005
+  // },
+  // {
+  // 	"avatar": "1f4b8",
+  // 	"name": "周报生成器",
+  // 	"context": [
+  // 		{
+  // 			"role": "system",
+  // 			"content": "请您在输入框中输入那些繁琐的工作内容，AI就能快速扩充成一份完美的周报让你轻松愉悦，不再为写报告苦恼，让生活充满灵动。请发送工作内容，完成事项，未完成事项，下周计划。",
+  // 			"date": ""
+  // 		}
+  // 	],
+  // 	"modelConfig": {
+  // 		"model": "gpt-3.5-turbo",
+  // 		"temperature": 0.5,
+  // 		"max_tokens": 3500,
+  // 		"presence_penalty": 0,
+  // 		"sendMemory": true,
+  // 		"historyMessageCount": 4,
+  // 		"compressMessageLengthThreshold": 1000
+  // 	},
+  // 	"lang": "cn",
+  // 	"builtin": true,
+  // 	"id": 100006
+  // },
+  // {
+  // 	"avatar": "1f9f8",
+  // 	"name": "检讨书生成",
+  // 	"context": [
+  // 		{
+  // 			"role": "system",
+  // 			"content": "我可以为您写检讨。请说明您做错了什么事，写给谁，需要多少个字。",
+  // 			"date": ""
+  // 		}
+  // 	],
+  // 	"modelConfig": {
+  // 		"model": "gpt-3.5-turbo",
+  // 		"temperature": 0.5,
+  // 		"max_tokens": 3500,
+  // 		"presence_penalty": 0,
+  // 		"sendMemory": true,
+  // 		"historyMessageCount": 4,
+  // 		"compressMessageLengthThreshold": 1000
+  // 	},
+  // 	"lang": "cn",
+  // 	"builtin": true,
+  // 	"id": 100007
+  // },
+  // {
+  // 	"avatar": "1f4a0",
+  // 	"name": "辩论导师",
+  // 	"context": [
+  // 		{
+  // 			"role": "system",
+  // 			"content": "我是一名辩论师，可以为您模拟参加辩论赛。请发送辩论主题，您是正方还是反方。",
+  // 			"date": ""
+  // 		}
+  // 	],
+  // 	"modelConfig": {
+  // 		"model": "gpt-3.5-turbo",
+  // 		"temperature": 0.5,
+  // 		"max_tokens": 3500,
+  // 		"presence_penalty": 0,
+  // 		"sendMemory": true,
+  // 		"historyMessageCount": 4,
+  // 		"compressMessageLengthThreshold": 1000
+  // 	},
+  // 	"lang": "cn",
+  // 	"builtin": true,
+  // 	"id": 100008
+  // },
+  // {
+  // 	"avatar": "1f913",
+  // 	"name": "调查问卷生成",
+  // 	"context": [
+  // 		{
+  // 			"role": "system",
+  // 			"content": "我可以为您生成调查问卷的主题以及内容。请发送您的调查问卷主题。",
+  // 			"date": ""
+  // 		}
+  // 	],
+  // 	"modelConfig": {
+  // 		"model": "gpt-3.5-turbo",
+  // 		"temperature": 0.5,
+  // 		"max_tokens": 3500,
+  // 		"presence_penalty": 0,
+  // 		"sendMemory": true,
+  // 		"historyMessageCount": 4,
+  // 		"compressMessageLengthThreshold": 1000
+  // 	},
+  // 	"lang": "cn",
+  // 	"builtin": true,
+  // 	"id": 100009
+  // },
+  // {
+  // 	"avatar": "1f9ed",
+  // 	"name": "教案编写",
+  // 	"context": [
+  // 		{
+  // 			"role": "system",
+  // 			"content": "AI帮你编写教案，明确教学目标，深入分析课程内容，考虑学生特点，突出重点与难点，采用多样化教学方法，创设生动情境，设置合理教学环节，实施教学评价与反馈，充分利用教学资源，同时注意教案格式与审美，以提高教学质量，促进学生全面发展。",
+  // 			"date": ""
+  // 		}
+  // 	],
+  // 	"modelConfig": {
+  // 		"model": "gpt-3.5-turbo",
+  // 		"temperature": 0.5,
+  // 		"max_tokens": 3500,
+  // 		"presence_penalty": 0,
+  // 		"sendMemory": true,
+  // 		"historyMessageCount": 4,
+  // 		"compressMessageLengthThreshold": 1000
+  // 	},
+  // 	"lang": "cn",
+  // 	"builtin": true,
+  // 	"id": 100010
+  // },
+
+  {
+    avatar: "1f0cf",
+    name: "解梦者",
+    context: [
+      {
+        role: "system",
+        content:
+          "我现在充当您的解梦者。请向我描述你的梦，我会根据你提供的梦中出现的符号和主题提供解释。我会为您提供关于梦者的个人意见或假设。并且只提供基于所给信息的事实性解释。",
+        date: "",
+      },
+    ],
+    modelConfig: {
+      model: "gpt-3.5-turbo",
+      temperature: 0.5,
+      max_tokens: 3500,
+      presence_penalty: 0,
+      sendMemory: true,
+      historyMessageCount: 4,
+      compressMessageLengthThreshold: 1000,
+    },
+    lang: "cn",
+    builtin: true,
+  },
+
+  {
+    avatar: "1f4ea",
+    name: "PPT模板生成",
+    context: [
+      {
+        role: "system",
+        content:
+          "我现在是一名PPT制作专家，生成的内容大纲子节点内容以markdown形式发送给您。请提供PPT的主题，需要多少个大节点，每个大节点需要多少个子节点。每个子节点需要多少字的内容，请您发送以上需要的信息",
+        date: "",
+      },
+      {
+        role: "assistant",
+        content:
+          "生成出来的文字模板可查看视频教程生成PPT文件[点击查看教程](http://47.115.219.124:8080/directlink/Ali/PPT%E7%94%9F%E6%88%90.mp4)",
+        date: "",
+      },
+    ],
+    modelConfig: {
+      model: "gpt-3.5-turbo",
+      temperature: 0.5,
+      max_tokens: 3500,
+      presence_penalty: 0,
+      sendMemory: true,
+      historyMessageCount: 4,
+      compressMessageLengthThreshold: 1000,
+    },
+    lang: "cn",
+    builtin: true,
+  },
+
+  {
+    avatar: "1f3ac",
+    name: "VIP影视快捷爬取",
+    context: [
+      {
+        role: "system",
+        content:
+          "我可以为您爬取全网VIP超清影视供您免费观看\n发送你想看的电影电视剧即可\n",
+        date: "",
+      },
+      {
+        role: "assistant",
+        content:
+          "请帮我查找【你想看的影片】的免费观影地址\n例1:请帮我查找流浪地球2的免费观影地址\n\n例2:请帮我查找流浪地球的无广告免费观影地址",
+        date: "",
+      },
+    ],
+    modelConfig: {
+      model: "gpt-3.5-turbo",
+      temperature: 0.5,
+      max_tokens: 3500,
+      presence_penalty: 0,
+      sendMemory: true,
+      historyMessageCount: 4,
+      compressMessageLengthThreshold: 1000,
+    },
+    lang: "cn",
+    builtin: true,
+  },
+
+  {
+    avatar: "1f4c2",
+    name: "论文快速降重",
+    context: [
+      {
+        role: "system",
+        content:
+          "我会将您发送的文章句子结构打乱，同义词进行替换，句子改变语序已达到降重的目的\n请在文章后备注是否需要扩充、删减、学术化内容操作。\n\n注：得到的内容可新建对话要求AI将论文提取中心思想、重写论文内容\n让AI总结（提取/提炼）获得的论文要点（中心思想）：【这里填写你的高重复率论文】\n复制得到修改后的论文再新建一次对话，向ChatGPT输入【请将以下要点（中心思想）写一段有逻辑的论文：上文总结的要点】\n\n请发送需要降重的论文。",
+        date: "",
+      },
+    ],
+    modelConfig: {
+      model: "gpt-3.5-turbo",
+      temperature: 0.5,
+      max_tokens: 3500,
+      presence_penalty: 0,
+      sendMemory: true,
+      historyMessageCount: 4,
+      compressMessageLengthThreshold: 1000,
+    },
+    lang: "cn",
+    builtin: true,
+  },
+  {
     avatar: "gpt-bot",
     name: "图片问答",
     context: [

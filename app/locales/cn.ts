@@ -4,7 +4,7 @@ const cn = {
   WIP: "该功能仍在开发中……",
   Error: {
     Unauthorized:
-      "现在是未授权状态，请点击左下角[设置](/#/settings)按钮输入访问密码。",
+      "现在是未授权状态，请点击左下角[设置](/#/settings)按钮输入访问卡密。\n\n有什么可以帮你的吗？\n如需使用4.0api,请在左下角设置的模型选择中切换gpt4！\n\n❗重要提示：选择gpt4模型后要新建一个聊天对话！\n\n💥卡密访问💥：请在设置中输入密码返回即可。\n 如有问题联系客服QQ 431571451\n本站高速通道已启用，限时购买链接 [点击跳转](https://pay.adminjs.net)",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} 条对话`,
@@ -32,7 +32,7 @@ const cn = {
     Send: "发送",
     Config: {
       Reset: "重置默认",
-      SaveAs: "另存为面具",
+      SaveAs: "另存为应用",
     },
   },
   Export: {
@@ -87,11 +87,13 @@ const cn = {
     },
 
     Update: {
-      Version: (x: string) => `当前版本：${x}`,
-      IsLatest: "已是最新版本",
-      CheckUpdate: "检查更新",
-      IsChecking: "正在检查更新...",
-      FoundUpdate: (x: string) => `发现新版本：${x}`,
+      // Version: (x: string) => `当前版本：${x}`,
+      Version: (x: string) => `发布页`,
+      IsLatest: "立即前往1",
+      CheckUpdate: "立即前往",
+      IsChecking: "前往...",
+      // FoundUpdate: (x: string) => `发现新版本：${x}`,
+      FoundUpdate: (x: string) => `稳定的发布地址`,
       GoToUpdate: "前往更新",
     },
     SendKey: "发送键",
@@ -102,8 +104,8 @@ const cn = {
       SubTitle: "在预览气泡中预览 Markdown 内容",
     },
     Mask: {
-      Title: "面具启动页",
-      SubTitle: "新建聊天时，展示面具启动页",
+      Title: "GPT应用启动页",
+      SubTitle: "新建聊天时，展示GPT应用启动页",
     },
     Prompt: {
       Disable: {
@@ -168,7 +170,7 @@ const cn = {
   Store: {
     DefaultTopic: "新的聊天",
     BotHello:
-      "有什么可以帮你的吗？\n 本站支持最新的4.0api，\n 购买请联系微信csscode",
+      "有什么可以帮你的吗？\n如需使用4.0api,请在左下角设置的模型选择中切换gpt4！\n\n❗重要提示：选择gpt4模型后要新建一个聊天对话！\n\n💥卡密访问💥：请在设置中输入密码返回即可。\n 如有问题联系客服QQ 431571451\n本站高速通道已启用，限时购买链接 [点击跳转](http://sougou.com)",
     Error: "出错了，稍后重试吧",
     Prompt: {
       History: (content: string) =>
@@ -189,14 +191,14 @@ const cn = {
     Add: "新增预设对话",
   },
   Plugin: {
-    Name: "插件",
+    Name: "使用教程",
   },
   Mask: {
-    Name: "面具",
+    Name: "GPT应用",
     Page: {
-      Title: "预设角色面具",
-      SubTitle: (count: number) => `${count} 个预设角色定义`,
-      Search: "搜索角色面具",
+      Title: "GPT应用",
+      SubTitle: (count: number) => `${count} 个chatGPT应用`,
+      Search: "搜索GPT应用",
       Create: "新建",
     },
     Item: {
@@ -223,7 +225,7 @@ const cn = {
     Skip: "直接开始",
     NotShow: "不再展示",
     ConfirmNoShow: "确认禁用？禁用后可以随时在设置中重新启用。",
-    Title: "挑选一个面具",
+    Title: "海量的ChatGPT应用",
     SubTitle: "现在开始，与面具背后的灵魂思维碰撞",
     More: "查看全部",
   },

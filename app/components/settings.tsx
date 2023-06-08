@@ -341,7 +341,7 @@ export function Settings() {
             </Popover>
           </ListItem>
 
-          {/* <ListItem
+          <ListItem
             title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}
             subTitle={
               checkingUpdate
@@ -351,20 +351,12 @@ export function Settings() {
                 : Locale.Settings.Update.IsLatest
             }
           >
-            {checkingUpdate ? (
-              <div />
-            ) : hasNewVersion ? (
-              <Link href={UPDATE_URL} target="_blank" className="link">
-                {Locale.Settings.Update.GoToUpdate}
-              </Link>
-            ) : (
-              <IconButton
-                icon={<ResetIcon></ResetIcon>}
-                text={Locale.Settings.Update.CheckUpdate}
-                onClick={() => checkUpdate(true)}
-              />
-            )}
-          </ListItem> */}
+            <IconButton
+              // icon={<ResetIcon></ResetIcon>}
+              text={Locale.Settings.Update.CheckUpdate}
+              onClick={() => (window.location.href = "https://baidu.com")}
+            />
+          </ListItem>
 
           <ListItem title={Locale.Settings.SendKey}>
             <select
@@ -504,15 +496,16 @@ export function Settings() {
             </ListItem>
           ) : null}
 
-          <ListItem
+          {/* <ListItem
             title={Locale.Settings.Usage.Title}
             subTitle={
               showUsage
                 ? loadingUsage
                   ? Locale.Settings.Usage.IsChecking
                   : Locale.Settings.Usage.SubTitle(
-                      usage?.used ?? "[?]",
-                      usage?.subscription ?? "[?]",
+                      // usage?.used ?? "3204.9",
+                      // usage?.subscription ?? "66000",
+                      7910,50000
                     )
                 : Locale.Settings.Usage.NoAccess
             }
@@ -526,7 +519,7 @@ export function Settings() {
                 onClick={() => checkUsage(true)}
               />
             )}
-          </ListItem>
+          </ListItem> */}
         </List>
 
         <List>

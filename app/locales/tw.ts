@@ -32,7 +32,7 @@ const tw: LocaleType = {
     Send: "發送",
     Config: {
       Reset: "重置默认",
-      SaveAs: "另存为面具",
+      SaveAs: "另存为应用",
     },
   },
   Export: {
@@ -185,13 +185,13 @@ const tw: LocaleType = {
     Edit: "前置上下文和歷史記憶",
     Add: "新增一條",
   },
-  Plugin: { Name: "插件" },
+  Plugin: { Name: "使用教程" },
   Mask: {
-    Name: "面具",
+    Name: "GPT应用",
     Page: {
-      Title: "预设角色面具",
+      Title: "GPT应用",
       SubTitle: (count: number) => `${count} 个预设角色定义`,
-      Search: "搜索角色面具",
+      Search: "搜索GPT应用",
       Create: "新建",
     },
     Item: {
@@ -216,7 +216,7 @@ const tw: LocaleType = {
   NewChat: {
     Return: "返回",
     Skip: "跳过",
-    Title: "挑选一个面具",
+    Title: "海量的ChatGPT应用",
     SubTitle: "现在开始，与面具背后的灵魂思维碰撞",
     More: "搜索更多",
     NotShow: "不再展示",
